@@ -111,7 +111,7 @@ var testConfig2 = {
 function initChart(divId){
     if(chartMap.get(divId) == undefined){
         var config = JSON.parse(JSON.stringify(defaultConfig));
-        var chart = new Chart(document.getElementById(divId), testConfig);
+        var chart = new Chart(document.getElementById(divId), defaultConfig);
         chartMap.set(divId, chart);
     }else{
         alert("chart already exists");
