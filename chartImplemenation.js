@@ -27,10 +27,91 @@ var defaultConfig = {
 };
 
 
+var testConfig1 = {
+    type: 'bar',
+    data: {
+        labels:["sum", "count"],
+        datasets: [{
+                label:"ინგა აკობია",
+                data:[11023.31, 1],
+                backgroundColor: Array.from({length:2}, () => '#'+(Math.random()*0xFFFFFF<<0).toString(16)),
+            },
+            {
+                label:"მამუკა ქვლივიძე",
+                data:[59577.24, 2],
+                backgroundColor: Array.from({length:2}, () => '#'+(Math.random()*0xFFFFFF<<0).toString(16)),
+            },
+            {
+                label:"მაია ჩანდიშვილი",
+                data:[53377.12,1],
+                backgroundColor: Array.from({length:2}, () => '#'+(Math.random()*0xFFFFFF<<0).toString(16)),
+            },
+            {
+                label:"შპს სპორტისთვის",
+                data:[26828.98,1],
+                backgroundColor: Array.from({length:2}, () => '#'+(Math.random()*0xFFFFFF<<0).toString(16)),
+            },
+            {
+                label:"გივი ღლონტი",
+                data:[54644.07,3],
+                backgroundColor: Array.from({length:2}, () => '#'+(Math.random()*0xFFFFFF<<0).toString(16)),
+            },
+            {
+                label:"შპს აველლანა",
+                data:[31018.4,1],
+                backgroundColor: Array.from({length:2}, () => '#'+(Math.random()*0xFFFFFF<<0).toString(16)),
+            },
+            {
+                label:"შპს აველლანა",
+                data:[8500.5,1],
+                backgroundColor: Array.from({length:2}, () => '#'+(Math.random()*0xFFFFFF<<0).toString(16)),
+            },
+            {
+                label:"ზაზა ჯაველიძე",
+                data:[6201.24,2],
+                backgroundColor: Array.from({length:2}, () => '#'+(Math.random()*0xFFFFFF<<0).toString(16)),
+            },
+            {
+                label:"ზაზა ჯაველიძე",
+                data:[48626.85,5],
+                backgroundColor: Array.from({length:2}, () => '#'+(Math.random()*0xFFFFFF<<0).toString(16)),
+            }
+        ]
+    },
+    options: {
+        maintainAspectRatio: false,
+    }
+};
+
+var testConfig2 = {
+    type: 'bar',
+    data: {
+        labels:["ინგა აკობია","მამუკა ქვლივიძე", "მაია ჩანდიშვილი", "შპს სპორტისთვის", "გივი ღლონტი", "შპს აველლანა", "დათო კილაძე", "ზაზა ჯაველიძე", "ზაზა ჯაველიძე",],
+        datasets: [{
+                label:"sum",
+                data:[11023.31, 59577.24, 53377.12, 26828.98, 54644.07, 31018.4, 8500.5, 6201.24, 48626.85],
+                backgroundColor: Array.from({length:9}, () => '#'+(Math.random()*0xFFFFFF<<0).toString(16)),
+            },
+            {
+                label:"count",
+                data:[1,3,2,4,1,2,3,4,5],
+                backgroundColor: Array.from({length:9}, () => '#'+(Math.random()*0xFFFFFF<<0).toString(16)),
+            },
+        ]
+    },
+    options: {
+        maintainAspectRatio: false,
+    }
+};
+
+
+
+
+
 function initChart(divId){
     if(chartMap.get(divId) == undefined){
         var config = JSON.parse(JSON.stringify(defaultConfig));
-        var chart = new Chart(document.getElementById(divId), config);
+        var chart = new Chart(document.getElementById(divId), testConfig);
         chartMap.set(divId, chart);
     }else{
         alert("chart already exists");
